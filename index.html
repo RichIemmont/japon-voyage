@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyage au Japon - Octobre 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🇯🇵 Voyage au Japon - Octobre 2025</h1>
+            <nav class="header__nav">
+                <a href="#itineraire" class="nav-link">Itinéraire</a>
+                <a href="#activites" class="nav-link">Activités</a>
+                <a href="#carte" class="nav-link">Carte</a>
+                <a href="#budget" class="nav-link">Budget</a>
+                <a href="#infos" class="nav-link">Infos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h2 class="hero__subtitle">Découverte du Japon</h2>
+                    <div class="hero__info">
+                        <div class="info-card">
+                            <span class="info-label">📅 Dates</span>
+                            <span class="info-value">3 au 17 octobre 2025</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-label">⏱️ Durée</span>
+                            <span class="info-value">15 jours</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-label">👥 Participants</span>
+                            <span class="info-value">Groupe A et Groupe B</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-label">✈️ Vol</span>
+                            <span class="info-value">715€ (payé)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="itineraire" class="itineraire-section">
+            <div class="container">
+                <h2 class="section-title">Choisissez votre itinéraire</h2>
+                
+                <div class="itineraire-selector">
+                    <div class="radio-group">
+                        <input type="radio" id="version1" name="itineraire" value="version1" checked>
+                        <label for="version1" class="radio-label">
+                            <div class="radio-content">
+                                <h3>🏯 Osaka 4j + Kyoto 3j</h3>
+                                <p>Plus de temps pour Universal Studios et l'Expo Osaka</p>
+                            </div>
+                        </label>
+
+                        <input type="radio" id="version2" name="itineraire" value="version2">
+                        <label for="version2" class="radio-label">
+                            <div class="radio-content">
+                                <h3>⛩️ Osaka 3j + Kyoto 4j</h3>
+                                <p>Plus de temps pour découvrir le Japon traditionnel</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="itineraire-details">
+                    <div class="avantages-section">
+                        <h3>Avantages de cette version :</h3>
+                        <ul id="avantages-list" class="avantages-list"></ul>
+                    </div>
+
+                    <div class="calendrier-section">
+                        <h3>Calendrier détaillé :</h3>
+                        <div id="calendrier" class="calendrier"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="activites" class="activites-section">
+            <div class="container">
+                <h2 class="section-title">Activités et Attractions par Ville</h2>
+                
+                <div class="activites-filters">
+                    <h3>Filtrer par type :</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Toutes</button>
+                        <button class="filter-btn" data-filter="Culture">Culture</button>
+                        <button class="filter-btn" data-filter="Nature">Nature</button>
+                        <button class="filter-btn" data-filter="Moderne">Moderne</button>
+                        <button class="filter-btn" data-filter="Gastronomie">Gastronomie</button>
+                        <button class="filter-btn" data-filter="Shopping">Shopping</button>
+                        <button class="filter-btn" data-filter="Divertissement">Divertissement</button>
+                    </div>
+                </div>
+
+                <div class="villes-tabs">
+                    <button class="ville-tab active" data-ville="Tokyo">🏙️ Tokyo</button>
+                    <button class="ville-tab" data-ville="Hakone">🗻 Hakone</button>
+                    <button class="ville-tab" data-ville="Osaka">🏯 Osaka</button>
+                    <button class="ville-tab" data-ville="Kyoto">⛩️ Kyoto</button>
+                    <button class="ville-tab" data-ville="Nara">🦌 Nara</button>
+                </div>
+
+                <div class="activites-content">
+                    <div id="activites-Tokyo" class="activites-ville active">
+                        <div class="activites-grid"></div>
+                    </div>
+                    <div id="activites-Hakone" class="activites-ville">
+                        <div class="activites-grid"></div>
+                    </div>
+                    <div id="activites-Osaka" class="activites-ville">
+                        <div class="activites-grid"></div>
+                    </div>
+                    <div id="activites-Kyoto" class="activites-ville">
+                        <div class="activites-grid"></div>
+                    </div>
+                    <div id="activites-Nara" class="activites-ville">
+                        <div class="activites-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carte" class="carte-section">
+            <div class="container">
+                <h2 class="section-title">Carte du trajet</h2>
+                <div class="carte-container">
+                    <svg class="carte-svg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Fond du Japon stylisé -->
+                        <rect x="0" y="0" width="800" height="600" fill="#f8f9fa"/>
+                        
+                        <!-- Lignes de trajet -->
+                        <path d="M 400 100 Q 350 200 300 300" stroke="#21808D" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+                        <path d="M 300 300 L 200 400" stroke="#21808D" stroke-width="3" fill="none"/>
+                        <path d="M 200 400 L 350 450" stroke="#21808D" stroke-width="3" fill="none"/>
+                        <path d="M 350 450 Q 450 300 400 100" stroke="#21808D" stroke-width="3" fill="none"/>
+                        
+                        <!-- Tokyo -->
+                        <circle cx="400" cy="100" r="15" fill="#C0152F"/>
+                        <text x="400" y="80" text-anchor="middle" class="ville-label" fill="#134252">🏙️ Tokyo</text>
+                        
+                        <!-- Hakone -->
+                        <circle cx="300" cy="300" r="12" fill="#A84B2F" opacity="0.7"/>
+                        <text x="300" y="280" text-anchor="middle" class="ville-label" fill="#134252">🗻 Hakone</text>
+                        <text x="300" y="340" text-anchor="middle" class="optionnel-label" fill="#626C71">(optionnel)</text>
+                        
+                        <!-- Osaka -->
+                        <circle cx="200" cy="400" r="15" fill="#21808D"/>
+                        <text x="200" y="380" text-anchor="middle" class="ville-label" fill="#134252">🏯 Osaka</text>
+                        
+                        <!-- Kyoto -->
+                        <circle cx="350" cy="450" r="15" fill="#964325"/>
+                        <text x="350" y="430" text-anchor="middle" class="ville-label" fill="#134252">⛩️ Kyoto</text>
+                        
+                        <!-- Nara (excursion) -->
+                        <circle cx="380" cy="480" r="8" fill="#5D878F" opacity="0.8"/>
+                        <text x="380" y="500" text-anchor="middle" class="excursion-label" fill="#626C71">Nara</text>
+                        <path d="M 350 450 L 380 480" stroke="#5D878F" stroke-width="2" stroke-dasharray="3,3"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="contraintes-section">
+            <div class="container">
+                <h2 class="section-title">Contraintes et points d'attention</h2>
+                <div class="contraintes-grid">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>👥 Groupes différents</h3>
+                            <p>Groupe A privilégie Universal Studios Japan</p>
+                            <p>Groupe B préfère l'immersion culturelle à Kyoto</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>🎢 Réservations prioritaires</h3>
+                            <p>Universal Studios Japan : réservation obligatoire</p>
+                            <p>Expo Universelle Osaka : inscription + tirage au sort</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>🗻 Hakone optionnel</h3>
+                            <p>Région du Mont Fuji selon météo et envies</p>
+                            <p>Hakone Free Pass à prévoir si choisi</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>📊 Coordination</h3>
+                            <p>Google Sheet partagé pour organisation</p>
+                            <p>Tokyo découpé en deux temps pour logistique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="budget" class="budget-section">
+            <div class="container">
+                <h2 class="section-title">Budget et alternatives</h2>
+                <div class="budget-grid">
+                    <div class="card budget-main">
+                        <div class="card__body">
+                            <h3>💰 Budget total estimé</h3>
+                            <div class="budget-amount">3940€ par personne</div>
+                            <p class="budget-note">(vol non inclus - déjà payé 715€)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card budget-alternative">
+                        <div class="card__body">
+                            <h3>🚄 Alternative économique au JR Pass</h3>
+                            <div class="economie-amount">240€ d'économie par personne</div>
+                            <ul class="budget-details">
+                                <li>Shinkansen Nozomi Tokyo-Osaka : 168€ A/R</li>
+                                <li>Kansai Thru Pass 3 jours : 38€</li>
+                                <li>Hakone Free Pass : 49€ (optionnel)</li>
+                                <li>Cartes IC Suica/Pasmo : 12€</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="infos" class="infos-section">
+            <div class="container">
+                <h2 class="section-title">Informations pratiques</h2>
+                <div class="infos-grid">
+                    <div class="info-item">
+                        <span class="info-icon">🍂</span>
+                        <div class="info-content">
+                            <h4>Période octobre</h4>
+                            <p>Automne japonais, 18-23°C</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🎒</span>
+                        <div class="info-content">
+                            <h4>Service Takkyubin</h4>
+                            <p>Transfert de bagages entre villes</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📱</span>
+                        <div class="info-content">
+                            <h4>Applications mobiles</h4>
+                            <p>Navitime, Tokyo Metro, Google Maps</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">💴</span>
+                        <div class="info-content">
+                            <h4>Paiements</h4>
+                            <p>Société basée sur les espèces</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🎫</span>
+                        <div class="info-content">
+                            <h4>Expo Osaka</h4>
+                            <p>Inscription + tirage au sort requis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Résumé du voyage</h3>
+                <p>15 jours au Japon • 3-17 octobre 2025 • Tokyo, Hakone, Osaka, Kyoto</p>
+                <p>Deux groupes, deux préférences, un voyage inoubliable !</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
